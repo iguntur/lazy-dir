@@ -1,0 +1,39 @@
+{
+	"name": "lazy-dir",
+	"version": "1.0.0",
+	"description": "Lazy define current directory",
+	"license": "MIT",
+	"repository": "iguntur/lazy-dir",
+	"main": "dist/index.js",
+	"typings": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"author": {
+		"name": "Guntur Poetra",
+		"email": "poetra.guntur@gmail.com",
+		"url": "https://github.com/iguntur"
+	},
+	"engines": {
+		"node": ">=4"
+	},
+	"scripts": {
+		"test": "npm run build && ava",
+		"clean": "rm -rf dist",
+		"clean:dist": "rm -rf dist/*.test.* dist/fixtures",
+		"build": "npm run clean && npx tsc",
+		"build:release": "npm run test && npm run build -- --declaration && npm run clean:dist"
+	},
+	"keywords": [
+		"__dirname",
+		"dir",
+		"join",
+		"path",
+		"resolve"
+	],
+	"devDependencies": {
+		"@types/node": "^10.12.11",
+		"ava": "^0.25.0",
+		"typescript": "^3.2.1"
+	}
+}
